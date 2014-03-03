@@ -1,0 +1,67 @@
+      <div id="menuline">
+          <div id="menuline_box">
+              <ul>
+                  <li>お問い合わせフォーム</li>
+              </ul>
+          </div>
+      </div>
+      <div id="mainBox", class="form" >
+        <h2 align="center">お問い合わせフォーム</h2><br />
+        <h3>・お客様の個人情報、お寄せ頂いた相談内容は厳重に取り扱い、プライバシー保護に努めます。</h3><br />
+        <h3>・弊社からのお返事のメールは、お客様個人宛にお送りするものです。一部または全部を転載、2次利用することはご遠慮ください。</h3><br />
+        <h3>・お問い合わせには、営業時間内(9:00~17:00、土日祝日除く)に対応させて頂きます。また、お問い合わせ内容によっては、メールではなくお電話でご対応させて頂く場合もございますのでご了承下さい。</h3><br />
+        <h3>・お客様から頂いたメールアドレスが正しくない場合や、システム障害等によりお返事できない場合があります。返答のない場合はお電話でその旨お問い合わせ下さい。</h3><br />
+        <h3>・お客様から頂いた情報は弊社サービスの向上に活用させて頂く場合がございますが、それ以外の目的で使用することはございません。</h3><br />
+
+        <%= form_for @lp_contact, :url => {:action => 'save'} do |f| %>
+          <% if @lp_contact.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@lp_contact.errors.count, "error") %> メッセージが送信されませんでした。もう一度お試し下さい。</h2>
+
+              <ul>
+              <% @lp_contact.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div id="field">
+              <table>
+                  <tr>
+                      <th><div id="field"><%= f.label :氏名 %></th>
+                      <td><%= f.text_field :name, required: true, size: 70 %></td>
+                  </tr>
+                  <tr>
+                      <th><div id="field"><%= f.label :メールアドレス %></th>
+                      <td><%= f.text_field :email, required: true, size: 70 %></td>
+                  </tr>
+                  <tr>
+                      <th><div id="field"><%= f.label :お問い合せ内容 %></th>
+                      <td><%= f.text_area :content, required: true, size: "50x20" %></td>
+                  </tr>
+                  <tr>
+                      <th><div id="field"><%= f.label :ご意見、ご要望など %></th>
+                      <td><%= f.text_area :request, size: "50x15" %></td>
+                  </tr>
+              </table>
+          </div>
+          <br />
+          <div class="actions" align="center">
+            <%= f.submit :送信, onclick: "return check()" %>
+          </div>
+        <% end %>
+
+        <script type="text/javascript">
+          function check(){
+            if(window.confirm('送信してよろしいですか？')){ // 確認ダイアログを表示
+              return true; // 「OK」時は送信を実行
+            }
+            else{ // 「キャンセル」時の処理
+              window.alert('キャンセルされました'); // 警告ダイアログを表示
+              return false; // 送信を中止
+             }
+          }
+        </script>
+
+      </div>

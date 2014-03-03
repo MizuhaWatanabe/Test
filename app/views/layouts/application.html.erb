@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WazCHem</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application", "lp", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="home blog">
+
+    <div id="fb-root"></div>
+    <script>(function(d,  s,  id) {
+        var js,  fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js,  fjs);
+        }(document,  'script',  'facebook-jssdk'));</script>
+
+
+    <div id="wrapper">
+        <h1><%= link_to image_tag("lp/logo.png", class: "overwhite", width: 200, height: 50), 'home' %></h1>
+        <div id="header">
+            <%= link_to image_tag("lp/logo.png", align: "center", width: 760, height: 208), 'home' %>
+            <ul class="listBtnsL">
+                <li><%= link_to image_tag("lp/homeicon.png", class: "overwhite shadow", width: 169, height: 93), 'home'%>
+                <h3 align="center">ホーム / Home</h3></li>
+                <li><%= link_to image_tag("lp/companyicon.jpg", class: "overwhite shadow", width: 169, height: 93), 'company'%>
+                <h3 align="center">会社概要 / Company</h3></li>
+                <li><%= link_to image_tag("lp/serviceicon.jpg", class: "overwhite shadow", width: 169, height: 93), 'service'%>
+                <h3 align="center">事業内容 / Service</h3></li>
+                <li><%= link_to image_tag("lp/researchicon.jpg", class: "overwhite shadow", width: 169, height: 93), 'research'%>
+                <h3 align="center">研究開発 / Research</h3></li>
+                <li><%= link_to image_tag("lp/contacticon.jpg", class: "overwhite shadow", width: 169, height: 93), 'contacts'%>
+                <h3 align="center">お問い合わせ / Contact</h3></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="container">
+      <%= yield %>
+    </div>
+
+    <div id="footerWrapper">
+        <div id="footer">
+            <p class="toTop btn_top"><a href="#wrapper"><%= image_tag("lp/to_top_off.png", class: "overwhite", width: 94, height: 26) %></a></p>
+            <ul class="fNav01">
+                <li><a href="home" title="サイトマップ"><%= image_tag("lp/sitemap.png", class: "overwhite", width: 51, height: 12) %></a></li>
+                <li><a href="home" title="プライバシーポリシー"><%= image_tag("lp/privacypolicy.png", class: "overwhite", width: 83, height: 12) %></a></li>
+            </ul>
+            <dl>
+                <dt><%= link_to image_tag("lp/logo.png", class: "overwhite", width: 280, height: 70), 'home' %></dt>
+                <dd>〒231-0033 神奈川県横浜市中区長者町4-11-1-706<br /><a href="tel:038180610">tel：03-3818-0610</a> fax：03-3818-0617</dd>
+            </dl>
+            <div class="fb-like-box fTxt01" data-href="https://www.facebook.com/mana.bo.Inc" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true", height="230", width="450"></div>
+
+            <dl class="fSitemap">
+                <dt>WazCHem Inc.は、慶應義塾大学発スタートアップです。</dt>
+                <dd>
+                <ul>
+                    <li><a href="home" title="HOME">HOME</a>｜</li>
+                    <li><a href="company" title="会社概要">会社概要 / Company</a>｜</li>
+                    <li><a href="service" title="事業内容">事業内容 / Service</a>｜</li>
+                    <li><a href="research" title="研究開発">研究開発 / Research</a>｜</li>
+                    <li><a href="contacts" title="お問い合わせ">お問い合わせ / Contact</a></li>
+                </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <script src="http://www.google-analytics.com/urchin.js"
+        type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        _uacct = "UA-2106779-1";
+        urchinTracker();
+    </script>
+</body>
+
+</html>
