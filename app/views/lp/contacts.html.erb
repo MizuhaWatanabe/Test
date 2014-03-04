@@ -37,6 +37,10 @@
                       <td><%= f.text_field :email, required: true, size: 70 %></td>
                   </tr>
                   <tr>
+                      <th><div id="field"><%= f.label :電話番号 %></th>
+                      <td><%= f.text_field :phonenumber, required: true, size: 70 %></td>
+                  </tr>
+                  <tr>
                       <th><div id="field"><%= f.label :お問い合せ内容 %></th>
                       <td><%= f.text_area :content, required: true, size: "50x20" %></td>
                   </tr>

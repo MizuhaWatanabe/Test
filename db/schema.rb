@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301141810) do
+ActiveRecord::Schema.define(version: 20140304072546) do
 
   create_table "lp_contacts", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140301141810) do
     t.text     "request"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phonenumber"
   end
 
 end

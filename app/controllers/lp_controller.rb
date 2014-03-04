@@ -28,6 +28,6 @@ class LpController < ApplicationController
 
   private
     def lp_contact_params
-      params.require(:lp_contact).permit(:name, :email, :content, :request)
+      params.require(:lp_contact).permit(:name, :email,:phonenumber, :content, :request)
     end
 end
