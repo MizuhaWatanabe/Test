@@ -8,7 +8,7 @@ class ContactMailer < ActionMailer::Base
   #
   def lp_contacts(lp_contact)
     @lp_contact = lp_contact
-    email = (mail to: "mizuha.watanabe@gmail.com", subject: "【WazCHem】LPからお問い合わせがありました。")
+    email = (mail to: "mizuha.watanabe@gmail.com", subject: "【WazCHem】#{@lp_contact.name}さんからお問い合わせがありました。")
     email.deliver
   end
 end
