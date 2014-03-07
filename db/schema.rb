@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20140304072546) do
   create_table "lp_contacts", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "phonenumber"
     t.text     "content"
     t.text     "request"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "phonenumber"
   end
 
 end
