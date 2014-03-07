@@ -3,6 +3,7 @@ Wazchem::Application.routes.draw do
   #LPの各ページ
   get 'lp/home'
   get 'lp/company'
+  get 'lp/greeting'
   get 'lp/service'
   get 'lp/research'
   get 'lp/contacts'

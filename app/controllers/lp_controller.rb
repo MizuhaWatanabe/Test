@@ -7,6 +7,9 @@ class LpController < ApplicationController
   def company
   end
 
+  def greeting
+  end
+
   def service
   end
 
@@ -18,9 +21,11 @@ class LpController < ApplicationController
     @lp_contact = LpContact.new(lp_contact_params)
       if @lp_contact.save
         ContactMailer.lp_contacts(@lp_contact)
-        redirect_to action: 'home', text: 'メッセージは無事送信されました。'
+        flash[:notice] = "メッセージは無事送信されました。"
+        redirect_to action: 'home'
       else
-        render action: 'contacts', notice: '送信内容に不備があります。'
+        flash[:notice] = "システムエラーにより、メッセージがうまく送信されませんでした。"
+        render action: 'contacts'
       end
   end
 

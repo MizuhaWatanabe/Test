@@ -52,7 +52,7 @@
           </div>
           <br />
           <div class="actions" align="center">
-            <%= f.submit :送信, onclick: "return check()" %>
+              <%= f.submit :送信,disable_with: "送信中...", onclick: "return check()" %>
           </div>
         <% end %>
 
@@ -62,7 +62,6 @@
               return true; // 「OK」時は送信を実行
             }
             else{ // 「キャンセル」時の処理
-              window.alert('キャンセルされました'); // 警告ダイアログを表示
               return false; // 送信を中止
              }
           }
