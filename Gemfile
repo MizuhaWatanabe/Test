@@ -54,10 +54,8 @@ end
 #end
 
 gem 'haml-rails'
+gem 'html2haml'
 
-group :development do
-  gem 'erb2haml'
-end
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
